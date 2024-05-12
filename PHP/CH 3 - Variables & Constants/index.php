@@ -65,5 +65,11 @@ $status = 'offline';
 define ('USER_' . $ROLE, $status);
 echo USER_ADMIN . '<br>';
 
+## Predefine PHP Constant
+# Reference Link: https://www.php.net/manual/en/reserved.constants.php
+echo PHP_VERSION . '<br>';
 
+## Magic Constants
+echo __LINE__ . '<br>';
+echo __FILE__ . '<br>';
 ?>
