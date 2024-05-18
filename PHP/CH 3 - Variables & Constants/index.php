@@ -67,9 +67,16 @@ echo USER_ADMIN . '<br>';
 
 ## Predefine PHP Constant
 # Reference Link: https://www.php.net/manual/en/reserved.constants.php
-echo PHP_VERSION . '<br>';
+echo 'Php Version: ' . PHP_VERSION . '<br>';
 
 ## Magic Constants
-echo __LINE__ . '<br>';
-echo __FILE__ . '<br>';
+echo 'Line Number: ' . __LINE__ . '<br>';
+echo 'File Path: ' . __FILE__ . '<br>';
+
+# Variable Variables
+$input = 'Name';
+$$input = 'Php';
+echo $input . ': ' . $Name . '<br>';
+echo $input . ': ' . $$input . '<br>';
+echo $input . ': ' . ${$input} . '<br>';
 ?>
