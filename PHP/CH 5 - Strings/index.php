@@ -36,3 +36,16 @@ echo '<br><br>';
 
 # Same thing with line break
 echo nl2br($text) . '<br><br>';
+
+// Nowdoc
+# In NOWDOC everything is same except, the identifier are to be kept in single quotes, and once you do that the variables will no longer will be printed.
+$text2 = <<<'TEXT'
+// Hi $name,
+// Welcome To $course Tutorials.
+// Have a great time.
+Hi,
+Welcome To PHP Tutorials.
+Have a great time.
+TEXT;
+echo $text2;
+echo '<br><br>';
