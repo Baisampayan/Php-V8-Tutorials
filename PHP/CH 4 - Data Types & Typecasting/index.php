@@ -41,6 +41,14 @@
 ## Special Types - 2
     # resource
     # null
+    $x = null;
+    echo '<br>';
+    var_dump($x);
+    echo '<br>';
+    var_dump(is_null($x));
+    echo '<br>';
+    var_dump($x === null);
+    echo '<br>';
 
 ## Example of Typecasting
 echo '<br>';
@@ -62,3 +70,16 @@ function sum2(int $num1, int $num2) {
     return $num1 + $num2;
 }
 echo sum2(10, '8') . '<br>';
+
+## Strict Mode
+    # Syntax: declare (strict_type = 1);
+    # Strict Mode means it will through an error if you pass another type into integer, even if you pass something that can be converted dynamically.
+    # For example
+
+// declare (strict_type = 1);
+// function sum2(int $num1, int $num2) {
+//     return $num1 + $num2;
+// }
+// echo sum2(10, '8') . '<br>';
+
+    # However there is one exception here, even in STRICT mode you can pass integer where a float type is excepted without any error.
