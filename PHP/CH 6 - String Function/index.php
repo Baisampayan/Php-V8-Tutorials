@@ -67,3 +67,28 @@ $str1 = "Welcome to PHP Tutorials";
 ## join() - The join() function returns a string from the elements of an array. The join() function is an alias of the implode() function.
     # Syntax - join(separator,array);
     echo join(' ', $arr1) . '<br>';
+
+## explode() - Breaks a string into an array
+    # explode(separator,string,limit);
+    print_r(explode(" ", $str1));
+    echo '<br>';
+
+## number_format() - Formats a number with grouped thousands
+    # Syntax - number_format(number,decimals,decimalpoint,separator);
+    echo (number_format("2536475860") . '<br>');
+    echo (number_format("1000000", 2, ".", ",") . '<br>');
+
+## str_split() - Splits a string into an array
+    # Syntax - str_split(string,length);
+    print_r(str_split("Hello World"));
+    echo '<br>';
+    print_r(str_split("Hello World", 3));
+    echo '<br>';
+
+## str_word_count() - Count the number of words in a string
+    # str_word_count(string,return,char);
+    echo str_word_count("Hi Tom, good morning. How are you?") . '<br>';
+
+## strcasecmp() - Compares two strings (case-insensitive)
+    # Syntax - strcasecmp(string1,string2);
+    echo (strcasecmp('Hello World', 'HELLO WORLD')) . '<br>';
