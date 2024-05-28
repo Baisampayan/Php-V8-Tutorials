@@ -92,3 +92,44 @@ $str1 = "Welcome to PHP Tutorials";
 ## strcasecmp() - Compares two strings (case-insensitive)
     # Syntax - strcasecmp(string1,string2);
     echo (strcasecmp('Hello World', 'HELLO WORLD')) . '<br>';
+
+## strcmp() - Compares two strings (case-sensitive)
+    # Syntax - strcasecmp(string1,string2);
+    echo (strcmp('HELLO', 'HELLO')) . '<br>';
+    echo (strcmp('Hello', 'hELLO')) . '<br>';
+
+## strrchr() - The strrchr() function finds the position of the last occurrence of a string within another string, and returns all characters from this position to the end of the string.
+    # Syntax - strrchr(string,char);
+    echo strrchr("Hello buddy! What a beautiful day! What are you doing today?", "What") . '<br>';
+
+## strrev() - Reverses a string
+    # Syntax - strrev(string);
+    echo (strrev('gnidoc evol I')) . '<br>';
+
+## strtok() - Splits a string into smaller strings
+    # Syntax - strtok(string,split);
+    # string - Required. Specifies the string to split
+    # split - Required. Specifies one or more split characters
+    $str3 = 'I love coding, I am learning PHP nowadays!';
+    $spl = ' ';
+    $finalstr = strtok($str3, $spl);
+    while($finalstr !== false) {
+        echo $finalstr . '<br>';
+        $finalstr = strtok($spl);
+    }
+
+## trim() - Removes whitespace or other characters from both sides of a string
+    # Syntax - trim(string,charlist);
+    echo trim("Hello World", "ld") . '<br>';
+
+## ucfirst() - Converts the first character of a string to uppercase
+    # Syntax - ucfirst(string);
+    echo ucfirst('hello world!') . '<br>';
+
+## ucwords() - Converts the first character of each word in a string to uppercase
+    # Syntax - ucwords(string, delimiters);
+    echo ucwords('I love coding, I am learning PHP nowadays!') . '<br>';
+
+## wordwrap() - Wraps a string to a given number of characters
+    # Syntax - wordwrap(string,width,break,cut);
+    echo wordwrap('Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium earum id doloribus?',15,"<br>\n");
