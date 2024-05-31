@@ -38,9 +38,60 @@
     print_r($tempArray);
     echo '<br>';
 
+## array_merge() - Merges one or more arrays into one array
+    # Syntax - array_merge(array1, array2, array3, ...);
+    print_r(array_merge($tempArray, $arrkey));
+    echo '<br>';
+
+## array_filter() - Filters the values of an array using a callback function
+    # Syntax - array_filter(array, callback, flag);
+    $tempNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    print_r(array_filter($tempNum, function ($value) {
+        return $value >= 5;
+    }));
+    echo '<br>';
+
+    # Example 2
+    echo '<pre>';
+    print_r(array_filter($tempNum, function ($data){
+        return $data % 2 == 0;
+    }));
+    echo '</pre>';
+    echo '<br>';
+
+    $tempNum[2] = '3';
+    $tempNum[5] = '6';
+    # Example 3
+    echo '<pre>';
+    print_r(array_filter($tempNum, function ($data){
+        return is_int($data);
+    }));
+    echo '</pre>';
+    echo '<br>';
+
+    # Example 4
+    $tempItems = [
+        'apples' => 5,
+        'oranges' => 3,
+        'pears' => 7,
+        'bananas' => 18,
+        'grapes' => 24,
+        'mangoes' => 6,
+    ];
+    echo '<pre>';
+    print_r(array_filter($tempItems, function($data, $key) {
+        return $data >= 5 && $key !== 'pears';
+    }, ARRAY_FILTER_USE_BOTH));
+    echo '</pre>';
+
+    # Example 5
+    echo '<pre>';
+    print_r(array_filter($tempItems, function($key) {
+        return !in_array($key, ['apples', 'pears', 'grapes']);
+    }, ARRAY_FILTER_USE_KEY));
+    echo '</pre>';
 
 /*
-array_merge()
 array_filter()
 array_map()
 array_search()
