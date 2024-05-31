@@ -91,8 +91,9 @@
     }, ARRAY_FILTER_USE_KEY));
     echo '</pre>';
 
+## array_map() - Sends each value of an array to a user-made function, which returns new values
 /*
-array_filter()
+
 array_map()
 array_search()
 array_unique()
