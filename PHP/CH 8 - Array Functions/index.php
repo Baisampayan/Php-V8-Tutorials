@@ -92,6 +92,30 @@
     echo '</pre>';
 
 ## array_map() - Sends each value of an array to a user-made function, which returns new values
+    # Syntax - array_map(callback, array1, array2,...);
+    $tempNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    function sqr($value) {
+        return $value * $value;
+    };
+    $resultSqr = array_map('sqr', $tempNum);
+    echo '<pre>';
+    print_r($resultSqr);
+    echo '</pre><br>';
+
+    echo '<pre>';
+    print_r(array_map(function($value){
+        return $value * $value * $value;
+    }, $tempNum));
+    echo '</pre><br>';
+
+    $tempFruits = ['apple', 'orange', 'pear', 'pineapple', 'banana', 'guava', 'lemon', 'dragonfruit'];
+    $tempQuantity =[5, 7, 3, 8, 2, 9, 2, 4];
+    echo'<pre>';
+    print_r(array_map(function($fruits, $quantity){
+        return $fruits.' - '. $quantity;
+    }, $tempFruits, $tempQuantity));
+    echo '</pre><br>';
+
 /*
 
 array_map()
