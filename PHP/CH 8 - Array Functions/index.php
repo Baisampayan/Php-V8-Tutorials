@@ -116,22 +116,128 @@
     }, $tempFruits, $tempQuantity));
     echo '</pre><br>';
 
-/*
+## array_search() - Searches an array for a given value and returns the key
+    # Syntax - array_search(value, array, strict);
+    $tempNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    print_r(array_search(5, $tempNum));
+    echo '<br>';
+    print_r(array_search(7, $tempNum, true));
+    echo '<br>';
 
-array_map()
-array_search()
-array_unique()
-array_slice()
-array_combine()
-array_diff()
-array_intersect()
-array_reduce()
-array_walk()
-array_key_exists()
-array_flip()
-array_reverse()
-array_rand()
-array_column()
+## array_unique() - Removes duplicate values from an array
+    # Syntax - array_unique(array, sort_flags);
+    $tempNum = [1, 2, 3, 4, 3, 5, 6, 7, 5, 8, 9, 10];
+    print_r(array_unique($tempNum));
+    echo '<br>';
+    print_r(array_unique($tempNum, SORT_STRING));
+    echo '<br>';
+
+## array_slice() - Returns selected parts of an array
+    # Syntax - array_slice(array, start, length, preserve_keys);
+    $tempNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    print_r(array_slice($tempNum, 2, 3));
+    echo '<br>';
+    print_r(array_slice($tempNum, 2, 3, true));
+    echo '<br>';
+
+## array_combine() - Creates an array by using the elements from one "keys" array and one "values" array
+    # Syntax: array_combine(keys, values);
+    $tempNum = [1, 2, 3, 4, 5, 6, 7, 8];
+    $tempFruits = ['apple', 'orange', 'pear', 'pineapple', 'banana', 'guava', 'lemon', 'dragonfruit'];
+    echo '<pre>';
+    print_r(array_combine($tempNum, $tempFruits));
+    echo '</pre><br>';
+
+## array_diff() - Compare arrays, and returns the differences (compare values only)
+    # Syntax - array_diff(array1, array2, array3,...);
+    $tempNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    $tempNum2 = [1, 2, 3, 4, 5];
+    echo '<pre>';
+    print_r(array_diff($tempNum, $tempNum2));
+    echo '</pre><br>';
+
+## array_intersect() - Compare arrays, and returns the matches (compare values only)
+    # Syntax - array_intersect(array1, array2, array3,...);
+    echo '<pre>';
+    print_r(array_intersect($tempNum, $tempNum2));
+    echo '</pre><br>';
+
+## array_reduce() - Returns an array as a string, using a user-defined function
+    #Syntax: array_reduce(array, myfunction, initial);
+    $tempCost = [14, 25, 37, 47, 45, 61, 78, 38, 59, 10];
+    echo '<pre>Total Cost: $ ';
+    print_r(array_reduce($tempCost, function($carry, $item){
+        return $carry + $item;
+    }, 0));
+    echo '</pre><br>';
+
+## array_walk - Applies a user function to every member of an array.
+    # Syntax: array_walk(array, myfunction, parameter...);
+    $arrkey = ["Volvo"=>"XC90","BMW"=>"X5","Toyota"=>"Highlander"];
+    echo '<pre>';
+    array_walk($arrkey, function($value, $key){
+        echo "The best car of $key is $value.<br>";
+    });
+    echo '</pre><br>';
+
+## array_key_exists() - Checks if the specified key exists in the array
+    # Syntax - array_key_exists(key, array);
+    $arrkey = ["Volvo"=>"XC90","BMW"=>"X5","Toyota"=>"Highlander"];
+    if(array_key_exists("Volvo", $arrkey)){
+        echo "Volvo is present in the array<br>";
+    } else {
+        echo "Volvo is not present in the array<br>";
+    };
+    echo '<pre>';
+    print_r(array_key_exists("Volvo", $arrkey));
+    echo '</pre><br>';
+
+## array_flip() - Flips/Exchanges all keys with their associated values in an array.
+    # Syntax - array_flip(array);
+    $arrkey = ["Volvo"=>"XC90","BMW"=>"X5","Toyota"=>"Highlander"];
+    echo '<pre>';
+    print_r(array_flip($arrkey));
+    echo '</pre><br>';
+
+## array_reverse() - Returns an array in the reverse order
+    # Syntax - array_reverse(array, preserve_keys);
+    $arrkey = ["Volvo"=>"XC90","BMW"=>"X5","Toyota"=>"Highlander"];
+    echo '<pre>';
+    print_r(array_reverse($arrkey, true));
+    echo '</pre><br>';
+
+## array_rand() - Returns one or more random keys from an array
+    # Syntax - array_rand(array, num);
+    $arrkey = ["Volvo"=>"XC90","BMW"=>"X5","Toyota"=>"Highlander", "Honda"=>"City"];
+    echo '<pre>';
+    print_r(array_rand($arrkey, 2));
+    echo '</pre><br>';
+
+## array_column() - Returns the values from a single column in the input array
+    # Syntax - array_column(array, column_key, index_key);
+    $tempData = [
+        [
+            'id' => 5698,
+            'first_name' => 'Peter',
+            'last_name' => 'Griffin',
+        ],
+        [
+            'id' => 4767,
+            'first_name' => 'Ben',
+            'last_name' => 'Smith',
+        ],
+        [
+            'id' => 3809,
+            'first_name' => 'Joe',
+            'last_name' => 'Doe',
+        ]
+    ];
+    echo '<pre>';
+    print_r(array_column($tempData, 'first_name', 'id'));
+    echo '</pre><br>';
+
+
+/*
 array_multisort()
 array_sum()
 array_product()
