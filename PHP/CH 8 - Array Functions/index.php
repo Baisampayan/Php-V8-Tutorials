@@ -171,11 +171,22 @@
     }, 0));
     echo '</pre><br>';
 
-## array_walk - Applies a user function to every member of an array.
+## array_walk() - Applies a user function to every member of an array.
     # Syntax: array_walk(array, myfunction, parameter...);
     $arrkey = ["Volvo"=>"XC90","BMW"=>"X5","Toyota"=>"Highlander"];
     echo '<pre>';
     array_walk($arrkey, function($value, $key){
+        echo "The best car of $key is $value.<br>";
+    });
+    echo '</pre><br>';
+
+## array_walk_recursive() - Applies a user function recursively to every member of an array
+    # Syntax: array_walk_recursive(array, myfunction, parameter...);
+    # The difference between this function and the array_walk() function is that with this function you can work with deeper arrays (an array inside an array).
+    $arrcar1 = ["Volvo"=>"XC90","BMW"=>"X5","Toyota"=>"Highlander"];
+    $arrcar2 = [$arrcar1, "Honda"=>"City","Hyundai"=>"Creta"];
+    echo '<pre>';
+    array_walk_recursive($arrcar2, function($value, $key){
         echo "The best car of $key is $value.<br>";
     });
     echo '</pre><br>';
@@ -236,12 +247,53 @@
     print_r(array_column($tempData, 'first_name', 'id'));
     echo '</pre><br>';
 
+## array_multisort() - Sorts multiple or multi-dimensional arrays
+    # Syntax - array_multisort(array1, sortorder, sorttype, array2, array3, ...);
+    $tempNum = [21, 82, 53, 44, 95, 62, 17, 8, 49, 10];
+    $tempFruits = ['apple', 'orange', 'pear', 'pineapple', 'banana', 'guava', 'lemon', 'dragonfruit'];
+    echo '<pre>';
+    array_multisort($tempNum, SORT_ASC, SORT_NUMERIC); 
+    array_multisort($tempFruits, SORT_DESC, SORT_REGULAR);
+    echo '<br>';
+    print_r($tempNum);
+    echo '<br>';
+    print_r($tempFruits);
+    echo '</pre><br>';
 
-/*
-array_multisort()
-array_sum()
-array_product()
-array_walk_recursive()
-usort()
-array_diff_assoc()
-*/
+## array_sum() - Returns the sum of the values in an array
+    #Syntax - array_sum(array);
+    echo(array_sum($tempNum)) . '<br>';
+
+## array_product() - Calculates the product of the values in an array
+    # Syntax - array_product(array);
+    echo(array_product($tempNum)) . '<br>';
+
+# array_diff_assoc() - Compare arrays, and returns the differences (compare keys and values)
+    #This function compares the keys and values of two (or more) arrays, and return an array that contains the entries from array1 that are not present in array2 or array3, etc.
+    # Syntax - array_diff_assoc(array1,array2,array3...);
+    # Example 1
+    $a1=array("a"=>"red","b"=>"green","c"=>"blue","d"=>"yellow");
+    $a2=array("e"=>"red","f"=>"green","g"=>"blue");
+    $result=array_diff_assoc($a1,$a2);
+    print_r($result);
+
+    #Example 2
+    $a1=array("a"=>"red","b"=>"green","c"=>"blue","d"=>"yellow");
+    $a2=array("a"=>"red","f"=>"green","g"=>"blue");
+    $a3=array("h"=>"red","b"=>"green","g"=>"blue");
+    $result=array_diff_assoc($a1,$a2,$a3);
+    print_r($result);
+
+## usort() - Sorts an array by values using a user-defined comparison function
+    # Syntax - usort(array, myfunction);
+    $tempNum = [21, 82, 53, 44, 95, 62, 17, 8, 49, 10];
+    usort($tempNum, function($a, $b){
+        /*if($a == $b) {
+            return 0;
+        }
+        return ($a < $b)? -1 : 1;*/
+        return ($a == $b)? 0 : ($a < $b) ? -1 : 1;
+    });
+    foreach($tempNum as $key => $val) {
+        echo '[' . $key . '] => ' . $val . '<br>';
+    }
