@@ -292,7 +292,7 @@
             return 0;
         }
         return ($a < $b)? -1 : 1;*/
-        return ($a == $b)? 0 : ($a < $b) ? -1 : 1;
+        return ($a == $b)? 0 : (($a < $b) ? -1 : 1);
     });
     foreach($tempNum as $key => $val) {
         echo '[' . $key . '] => ' . $val . '<br>';
