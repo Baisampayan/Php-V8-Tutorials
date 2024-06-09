@@ -192,4 +192,56 @@
     $txt1 = "Hello";
     $txt2 = " world!";
     $txt1 .= $txt2;
-    echo $txt1 . '<br>';
+    echo $txt1 . '<br><br>';
+
+// Array Operators
+    # Union Operators
+    $arr1 = [0 => 'a', 1 => 'b', 2 => 'c'];
+    $arr2 = [3 => 'd', 4 => 'e', 5 => 'f'];
+    $arr3 = $arr1 + $arr2;
+    print_r($arr3);
+    echo '<br>';
+
+    # Equality Operator
+    $arr1 = [0 => 'a', 1 => 'b', 2 => 'c'];
+    $arr3 = [3 => 'a', 4 => 'b', 5 => 'c'];
+    $arr4 = [0 => 'a', 2 => 'c', 1 => 'b'];
+    $arr5 = [0 => 'a', 1 => 'b', 3 => 'c'];
+    var_dump($arr1 == $arr3);
+    echo '<br>';
+    var_dump($arr1 == $arr4);
+    echo '<br>';
+    var_dump($arr1 == $arr5);
+    echo '<br><br>';
+
+    # Identity Operator
+    $arr1 = [0 => 'a', 1 => 'b', 2 => 'c'];
+    $arr2 = [3 => 'a', 4 => 'b', 5 => 'c'];
+    $arr3 = [0 => 'a', 2 => 'c', 1 => 'b'];
+    $arr4 = [0 => 'a', 1 => 'b', 2 => 'c'];
+    var_dump($arr1 === $arr2);
+    echo '<br>';
+    var_dump($arr1 === $arr2);
+    echo '<br>';
+    var_dump($arr1 === $arr3);
+    echo '<br>';
+    var_dump($arr1 === $arr4);
+    echo '<br><br>';
+
+    # Inequality Operator
+    $arr1 = [0 => 'a', 1 => 'b', 2 => 'c'];
+    $arr2 = [3 => 'a', 4 => 'b', 5 => 'c'];
+    var_dump($arr1 != $arr2);
+    echo '<br>';
+    $arr1 = [0 => 'a', 1 => 'b', 2 => 'c'];
+    $arr2 = [3 => 'a', 4 => 'b', 5 => 'c'];
+    var_dump($arr1 <> $arr2);
+    echo '<br><br>';
+
+    # Non-identity Operator
+    $arr1 = [0 => 'a', 1 => 'b', 2 => 'c'];
+    $arr2 = [3 => 'a', 4 => 'b', 5 => 'c'];
+    var_dump($arr1 !== $arr2);
+    echo '<br>';
+
+// Conditional Assignment Operators
