@@ -117,3 +117,21 @@
     } elseif($num2 <= 5) {
         echo 'Second Number is less than or equal to First Number.' . '<br>';
     }
+
+    # Spaceship Operator
+    $num1 = 10;
+    $num2 = 25;
+    // returns -1 because $num1 is less than $num2
+    echo ($num1 <=> $num2) . '<br>';
+
+    $num1 = 30;
+    $num2 = 25;
+    // returns 1 because $num1 is greater to $num2
+    echo ($num1 <=> $num2) . '<br>';
+
+    $num1 = 10;
+    $num2 = 10;
+    // returns 0 because $num1 is equal to $num2
+    echo ($num1 <=> $num2) . '<br><br>';
+
+// Increment / Decrement Operators
