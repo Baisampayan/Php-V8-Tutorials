@@ -135,3 +135,29 @@
     echo ($num1 <=> $num2) . '<br><br>';
 
 // Increment / Decrement Operators
+    # Pre-increment Operators
+    $num1 = 15;
+    echo ++$num1 . '<br>';
+
+    # Post-increment Operators
+    $num1 = 15;
+    echo $num1++ . '<br>';
+
+    # Pre-decrement Operators
+    $num1 = 15;
+    echo --$num1 . '<br>';
+
+    # Post-decrement Operators
+    $num1 = 15;
+    echo $num1-- . '<br><br>';
+
+// Logical Operators
+    # AND Operators - ('and', '&&')
+    $num1 = 15;
+    $num2 = 25;
+    if($num1 == 15 and $num2 == 25) {
+        echo 'Both the numbers are equal.<br>';
+    }
+    if($num1 == 15 && $num2 == 25) {
+        echo 'Both the numbers are equal.<br>';
+    }
