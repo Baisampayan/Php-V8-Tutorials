@@ -245,3 +245,15 @@
     echo '<br>';
 
 // Conditional Assignment Operators
+    # Ternary Operator
+    $num1 = 15;
+    echo ($num1 >= 15) ? 'Number is greater than or equal to 15.<br>' : 'Number is less than 15.<br>';
+
+    # Null coalescing Operators
+    $x = 1;
+    $var = isset($x) ? $x : "not set";
+    echo "The value of x is $var.<br>";
+
+    $y;
+    $var = isset($y) ? $y : "not set";
+    echo "The value of y is $var.<br>";
