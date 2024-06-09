@@ -161,3 +161,23 @@
     if($num1 == 15 && $num2 == 25) {
         echo 'Both the numbers are equal.<br>';
     }
+
+    # OR Operators - ('or', ||)
+    if($num1 == 15 or $num2 != 25) {
+        echo 'Either of the numbers are equal.<br>';
+    }
+    if($num1 == 15 || $num2 != 25) {
+        echo 'Either of the numbers are equal.<br>';
+    }
+
+    # XOR Operators - ('xor')
+    if($num1 == 15 xor $num2 == 25) {
+        echo 'Case 1 is true <br>';
+    } elseif ($num1 == 15 xor $num2 == 35) {
+        echo 'Case 2 is true <br>';
+    }
+
+    # NOT Operator - ('not')
+    if(!($num1 == 25)) {
+        echo 'Number 1 condition is not true <br><br>';
+    }
