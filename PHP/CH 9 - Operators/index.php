@@ -181,3 +181,15 @@
     if(!($num1 == 25)) {
         echo 'Number 1 condition is not true <br><br>';
     }
+
+// String Operators
+    # Concatenation Operator
+    $txt1 = "Hello";
+    $txt2 = " world!";
+    echo $txt1 . $txt2 . '<br>';
+
+    # Concatenation Assignment Operator 
+    $txt1 = "Hello";
+    $txt2 = " world!";
+    $txt1 .= $txt2;
+    echo $txt1 . '<br>';
