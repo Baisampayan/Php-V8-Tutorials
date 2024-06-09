@@ -105,4 +105,15 @@
     }
 
     # Greater than or equal to Operator
-    
+    if($num1 >= 25) {
+        echo 'First Number is greater than or equal to Second Number.' . '<br>';
+    } elseif($num2 >= 25) {
+        echo 'Second Number is greater than First Number.' . '<br>';
+    }
+
+    # Less than or equal to Operator
+    if($num1 <= 5) {
+        echo 'First Number is less than or equal to Second Number.' . '<br>';
+    } elseif($num2 <= 5) {
+        echo 'Second Number is less than or equal to First Number.' . '<br>';
+    }
