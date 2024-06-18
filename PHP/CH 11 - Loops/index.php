@@ -19,3 +19,8 @@ for ($x = 0; $x <= 10; $x++) {
 }
 
 // Foreach Loops
+$colors = array("red", "green", "blue", "yellow");
+
+foreach ($colors as $x) {
+  echo "$x <br>";
+}
