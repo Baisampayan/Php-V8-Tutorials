@@ -24,7 +24,37 @@ $colors = array("red", "green", "blue", "yellow");
 foreach ($colors as $x) {
   echo "$x <br>";
 }
+echo '<br>';
 
 // Break
+$a = 1;
+$i = 1;
+while($a <= 10) {
+    echo 'a = ' . $a . ', ';
+    while($a < 8) {
+        if($a == 5){
+            break;
+        }
+        echo '<br>Inside the Second While Loop = ' . $a;
+        $a++;
+    }
+    $a++;
+    echo '<br>';
+}
+echo '<br>';
+
+// Nested Break
+$a = 1;
+$i = 1;
+while($a < 10) {
+    echo 'a = ' . $a . ', ';
+    $a++;
+    while($i < 5) {
+        echo '<br>Inside the Second While Loop: ' . $a;
+        $i++;
+        break 2;
+    }
+    echo '<br>';
+}
 
 // Continue
