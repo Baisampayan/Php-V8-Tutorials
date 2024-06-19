@@ -26,6 +26,30 @@ foreach ($colors as $x) {
 }
 echo '<br>';
 
+// Foreach Loops with Associative Arrays
+$user = [
+    'Name' => 'Baisampayan Das',
+    'Age' => 35,
+    'Gender' => 'Male',
+    'Email' => 'baisampayandas@gmail.com',
+    'Skills' => ['HTML', 'CSS', 'JavaScript', 'jQuery', 'Php']
+];
+
+// Foreach Loop using JSON Encode function
+foreach ($user as $key => $value) {
+    echo $key. ': '. json_encode($value) . '<br>';
+}
+echo '<br><br>';
+
+// Foreach Loop using Implode
+foreach ($user as $key => $value) {
+    if(is_array($value)) {
+        $value = implode(', ', $value);
+    }
+    echo $key. ': '. $value . '<br>';
+}
+echo '<br><br>';
+
 // Break
 $a = 1;
 $i = 1;
