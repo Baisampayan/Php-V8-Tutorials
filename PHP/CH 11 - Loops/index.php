@@ -43,10 +43,15 @@ echo '<br><br>';
 
 // Foreach Loop using Implode
 foreach ($user as $key => $value) {
+    echo $key. ': ';
     if(is_array($value)) {
-        $value = implode(', ', $value);
+        foreach ($value as $skill) {
+            echo $skill. ' - ';
+        }
+    } else {
+        echo $value;
     }
-    echo $key. ': '. $value . '<br>';
+    echo '<br>';
 }
 echo '<br><br>';
 
