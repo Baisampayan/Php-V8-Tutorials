@@ -19,6 +19,7 @@
         <li><a href="./PHP/CH 9 - Operators/index.php">Operators</a></li>
         <li><a href="./PHP/CH 10 - If-Else Conditional Statement/index.php">If-Else Conditional Statement</a></li>
         <li><a href="./PHP/CH 11 - Loops/index.php">Loops</a></li>
+        <li><a href="./PHP/CH 12 - Switch Statement/index.php">Switch Statement</a></li>
     </ol>
 </body>
 </html>
