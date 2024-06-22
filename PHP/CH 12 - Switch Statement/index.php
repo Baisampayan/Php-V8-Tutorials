@@ -20,6 +20,7 @@
             echo 'Payment Status: UNKNOWN' . '<br>';
             break;
     }
+echo '<br><br>';
 
 // Switch Statement with Array and Loop
 
