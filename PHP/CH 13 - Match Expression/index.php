@@ -15,3 +15,5 @@ echo $paymentStatusDisplay;
 // Difference between Switch and Match
 // Switch uses ==
 // Match uses ===
+// Match expression can be assigned to a value
+// Match expression doesn't use the break
